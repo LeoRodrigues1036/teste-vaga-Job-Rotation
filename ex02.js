@@ -1,15 +1,19 @@
-function gerador_fibonacci(numero){
-    var fibonacci = []
-    fibonacci[0] = 0
-    fibonacci[1] = 1
-    for (var i = 2; i < numero; i++) {
-        fibonacci[i] = fibonacci[i - 2] + fibonacci[i - 1]
+function verificaFibonacci(num) {
+    // Iniciando a sequência de Fibonacci
+    const fib = [0, 1];
+  
+    // Calculando a sequência até o número informado
+    while (fib[fib.length - 1] < num) {
+      fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
     }
-    return fibonacci
-}
-
-var x = gerador_fibonacci(10)
-
-console.log(x)
-
-//Leonardo Rodrigues Desenvolvedor 2023
+  
+    // Verificando se o número pertence à sequência
+    if (fib.includes(num)) {
+      return `O número ${num} pertence à sequência de Fibonacci!`;
+    } else {
+      return `O número ${num} não pertence à sequência de Fibonacci.`;
+    }
+  }
+  
+  // Chamando a função para verificar o número 13
+  console.log(verificaFibonacci(13));
